@@ -1,0 +1,25 @@
+<h1>Listing uders</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @uders.each do |uder| %>
+  <tr>
+    <td><%= uder.name %></td>
+    <td><%= uder.email %></td>
+    <td><%= link_to 'Show', uder %></td>
+    <td><%= link_to 'Edit', edit_uder_path(uder) %></td>
+    <td><%= link_to 'Destroy', uder, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Uder', new_uder_path %>
